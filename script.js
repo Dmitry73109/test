@@ -66,9 +66,12 @@ $(document).ready(function () {
         Swal.fire("Hmmm, no", "email is wrong! try email@mail.com", "error");
       } else if (hasSymbol && password.length >= 8) {
         Swal.fire("Done!", "U did it!", "success");
-      } else {
+      } else if(password.length < 8){
         highlightError("#password");
         Swal.fire("Hmmm, no", "password length should be 8", "error");
+      }else{
+        highlightError("#password");
+        Swal.fire("Hmmm, no", "You need 1 symbol", "error");
       }
     });
   
